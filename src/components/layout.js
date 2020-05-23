@@ -8,11 +8,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { MDXProvider } from "@mdx-js/react"
 
+import MdxLink from "./mdxLink"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const LocaleContext = React.createContext()
+
+const Layout = ({ children, pageContext: { locale } }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,7 +28,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <LocaleContext.Provider value={{ locale }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -33,13 +37,15 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
+        <MDXProvider components={{ a: MdxLink }}>
+          <main>{children}</main>
+        </MDXProvider>
         <footer>
           © {new Date().getFullYear()},{` `}
           <a href="https://www.fundaciobit.org">Fundació Bit</a>
         </footer>
       </div>
-    </>
+    </LocaleContext.Provider>
   )
 }
 
@@ -47,4 +53,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export { Layout, LocaleContext }

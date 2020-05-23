@@ -1,13 +1,16 @@
 import React from "react"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import useTranslations from "../components/useTranslations"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="COVID-19 ParcBit" />
-    <h1>COVID-19 ParcBit</h1>
-  </Layout>
-)
+const IndexPage = () => {
+  const { hello } = useTranslations()
+  return (
+    <>
+      <SEO title="COVID-19 ParcBit" />
+      <h1>{hello}</h1>
+    </>
+  )
+}
 
 export default IndexPage

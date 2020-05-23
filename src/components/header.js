@@ -78,22 +78,44 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <Link
-        to="/about"
+        to="/"
+        hrefLang="es"
         sx={{
           variant: "styles.navlink",
           p: 2,
         }}
       >
-        About
+        ES
       </Link>
       <Link
-        to="/contact"
+        to="/ca"
+        hrefLang="ca"
         sx={{
           variant: "styles.navlink",
           p: 2,
         }}
       >
-        Contact
+        CA
+      </Link>
+      <Link
+        to="/en"
+        hrefLang="en"
+        sx={{
+          variant: "styles.navlink",
+          p: 2,
+        }}
+      >
+        EN
+      </Link>
+      <Link
+        to="/de"
+        hrefLang="de"
+        sx={{
+          variant: "styles.navlink",
+          p: 2,
+        }}
+      >
+        DE
       </Link>
     </div>
   </header>
