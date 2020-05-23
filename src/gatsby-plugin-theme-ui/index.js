@@ -17,10 +17,11 @@ export default {
     heading: 1.125,
   },
   colors: {
-    text: "#000",
+    text: "rgba(61, 44, 40, 1.0)",
     background: "#fff",
     primary: "#A4D031",
-    secondary: "#5F32D1",
+    secondary: "rgba(95, 50, 209, 1)",
+    lightSecondary: "rgba(95, 50, 209, 0.6)",
     muted: "#f6f6f6",
   },
   styles: {
@@ -122,6 +123,8 @@ export default {
         outline: "1px solid rgba(0, 192, 255, .25)",
       },
     },
+  },
+  links: {
     navlink: {
       display: "inline-block",
       fontWeight: "bold",
@@ -129,6 +132,15 @@ export default {
       textDecoration: "none",
       ":hover,:focus": {
         color: "primary",
+      },
+    },
+    bodyLink: {
+      fontWeight: "bold",
+      color: "inherit",
+      textDecoration: "underline",
+      ":hover,:focus": {
+        color: "secondary",
+        textDecorationColor: "lightSecondary",
       },
     },
   },

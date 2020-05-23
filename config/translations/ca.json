@@ -1,5 +1,6 @@
 {
   "hello": "Mesures front la COVID-19 al ParcBit",
-  "subline": "You can read some of my cool articles I wrote!",
-  "backToHome": "Back to home"
+  "home": "Inici",
+  "buildings": "Edificis",
+  "park": "Parc"
 }

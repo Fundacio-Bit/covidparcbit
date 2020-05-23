@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
 import { LocaleContext } from "./layout"
@@ -17,7 +19,7 @@ const LocalizedLink = ({ to, ...props }) => {
     ? to
     : `${locales[locale].path}${isIndex ? `` : `${to}`}`
 
-  return <Link {...props} to={path} />
+  return <Link {...props} to={path} sx={{ variant: "links.bodyLink" }} />
 }
 
 export default LocalizedLink
