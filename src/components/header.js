@@ -2,26 +2,34 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import logo from "../images/logoparcbit.svg"
 
 const Header = ({ siteTitle }) => (
   <header
     sx={{
-      py: 4,
+      display: "grid",
+      gridGap: 3,
+      maxWidth: 768,
+      mx: "auto",
+      px: 3,
+      py: 3,
+      gridAutoFlow: "row",
+      gridTemplateColumns: ["repeat(2, 1fr)", "repeat(3, 1fr)"],
       variant: "styles.header",
     }}
   >
     <div
       sx={{
         display: "flex",
+        alignItems: "center",
         justifyContent: "center",
-        mb: 3,
+        gridColumnStart: [1, 2],
+        gridColumnEnd: [3, 3],
+        order: [0, 1],
       }}
     >
       <Link to="/" title="Home">
-        <img
-          alt="UI Logo"
-          src="https://contrast.now.sh/cff/40f?size=48&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI"
-        />
+        <img alt="ParcBit Logo" src={logo} sx={{ width: 48, height: 48 }} />
         <span
           sx={{
             position: "absolute",
@@ -38,12 +46,12 @@ const Header = ({ siteTitle }) => (
     <div
       sx={{
         display: "flex",
-        justifyContent: "center",
+        alignItems: "center",
+        justifyContent: "flex-start",
       }}
     >
       <Link
-        activeClassName="active"
-        to="/page-2/"
+        to="/work"
         sx={{
           variant: "styles.navlink",
           p: 2,
@@ -52,7 +60,7 @@ const Header = ({ siteTitle }) => (
         Work
       </Link>
       <Link
-        to="/page-2/"
+        to="/blog"
         sx={{
           variant: "styles.navlink",
           p: 2,
@@ -60,8 +68,17 @@ const Header = ({ siteTitle }) => (
       >
         Blog
       </Link>
+    </div>
+    <div
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        order: 2,
+      }}
+    >
       <Link
-        to="/page-2/"
+        to="/about"
         sx={{
           variant: "styles.navlink",
           p: 2,
@@ -70,7 +87,7 @@ const Header = ({ siteTitle }) => (
         About
       </Link>
       <Link
-        to="/page-2/"
+        to="/contact"
         sx={{
           variant: "styles.navlink",
           p: 2,
