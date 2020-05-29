@@ -8,7 +8,8 @@ import useTranslations from "./useTranslations"
 import logo from "../images/logoparcbit.svg"
 
 const Header = ({ siteTitle }) => {
-  const { home, buildings, park } = useTranslations()
+  const { home, buildings, park, contact } = useTranslations()
+  debugger
   return (
     <header
       sx={{
@@ -20,7 +21,6 @@ const Header = ({ siteTitle }) => {
         py: 3,
         gridAutoFlow: "row",
         gridTemplateColumns: ["repeat(2, 1fr)", "repeat(3, 1fr)"],
-        variant: "styles.header",
       }}
     >
       <div
@@ -81,6 +81,15 @@ const Header = ({ siteTitle }) => {
           }}
         >
           {buildings}
+        </LocalizedLink>
+        <LocalizedLink
+          to="/contact"
+          sx={{
+            variant: "links.navlink",
+            p: 2,
+          }}
+        >
+          {contact}
         </LocalizedLink>
       </div>
       <div

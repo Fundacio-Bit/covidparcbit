@@ -35,6 +35,7 @@ const query = graphql`
             home
             buildings
             park
+            contact
           }
         }
       }
