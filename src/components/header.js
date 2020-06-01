@@ -9,31 +9,20 @@ import logo from "../images/logoparcbit.svg"
 
 const Header = ({ siteTitle }) => {
   const { home, buildings, park, contact } = useTranslations()
-  debugger
   return (
     <header
       sx={{
-        display: "grid",
-        gridGap: 3,
-        maxWidth: 768,
-        mx: "auto",
-        px: 3,
-        py: 3,
-        gridAutoFlow: "row",
-        gridTemplateColumns: ["repeat(2, 1fr)", "repeat(3, 1fr)"],
+        py: 4,
+        variant: "styles.header",
       }}
     >
       <div
         sx={{
           display: "flex",
-          alignItems: "center",
           justifyContent: "center",
-          gridColumnStart: [1, 2],
-          gridColumnEnd: [3, 3],
-          order: [0, 1],
         }}
       >
-        <LocalizedLink to="/" title="Home">
+        <Link to="/" title={home}>
           <img alt="ParcBit Logo" src={logo} sx={{ width: 48, height: 48 }} />
           <span
             sx={{
@@ -44,92 +33,100 @@ const Header = ({ siteTitle }) => {
               top: -9999,
             }}
           >
-            {home}
+            Home
           </span>
-        </LocalizedLink>
+        </Link>
       </div>
       <div
         sx={{
           display: "flex",
+          flexWrap: "wrap",
           alignItems: "center",
-          justifyContent: "flex-start",
+          maxWidth: 768,
+          mx: "auto",
+          px: 3,
+          py: 3,
         }}
       >
-        <LocalizedLink
-          to="/"
+        <div
           sx={{
-            variant: "links.navlink",
-            p: 2,
+            flexGrow: 1,
+            flexBasis: "sidebar",
           }}
         >
-          {home}
-        </LocalizedLink>
-        <LocalizedLink
-          to="/park"
+          <LocalizedLink
+            to="/"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            {home}
+          </LocalizedLink>
+          <LocalizedLink
+            to="/park"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            {park}
+          </LocalizedLink>
+          <LocalizedLink
+            to="/buildings"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            {buildings}
+          </LocalizedLink>
+          <LocalizedLink
+            to="/contact"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            {contact}
+          </LocalizedLink>
+        </div>
+        <div
           sx={{
-            variant: "links.navlink",
-            p: 2,
+            ml: "auto",
           }}
         >
-          {park}
-        </LocalizedLink>
-        <LocalizedLink
-          to="/buildings"
-          sx={{
-            variant: "links.navlink",
-            p: 2,
-          }}
-        >
-          {buildings}
-        </LocalizedLink>
-        <LocalizedLink
-          to="/contact"
-          sx={{
-            variant: "links.navlink",
-            p: 2,
-          }}
-        >
-          {contact}
-        </LocalizedLink>
-      </div>
-      <div
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          order: 2,
-        }}
-      >
-        <Link
-          to="/"
-          hrefLang="es"
-          sx={{
-            variant: "links.navlink",
-            p: 2,
-          }}
-        >
-          ES
-        </Link>
-        <Link
-          to="/ca"
-          hrefLang="ca"
-          sx={{
-            variant: "links.navlink",
-            p: 2,
-          }}
-        >
-          CA
-        </Link>
-        <Link
-          to="/en"
-          hrefLang="en"
-          sx={{
-            variant: "links.navlink",
-            p: 2,
-          }}
-        >
-          EN
-        </Link>
+          <Link
+            to="/"
+            hrefLang="es"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            ES
+          </Link>
+          <Link
+            to="/ca"
+            hrefLang="ca"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            CA
+          </Link>
+          <Link
+            to="/en"
+            hrefLang="en"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            EN
+          </Link>
+        </div>
       </div>
     </header>
   )

@@ -33,7 +33,7 @@ const Layout = ({ children, pageContext: { locale } }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 768,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
