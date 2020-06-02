@@ -12,6 +12,7 @@ import { MDXProvider } from "@mdx-js/react"
 
 import MdxLink from "./mdxLink"
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const LocaleContext = React.createContext()
@@ -40,10 +41,7 @@ const Layout = ({ children, pageContext: { locale } }) => {
         <MDXProvider components={{ a: MdxLink }}>
           <main>{children}</main>
         </MDXProvider>
-        <footer>
-          © {new Date().getFullYear()},{` `}
-          <a href="https://www.fundaciobit.org">Fundació Bit</a>
-        </footer>
+        <Footer />
       </div>
     </LocaleContext.Provider>
   )
