@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Image } from "theme-ui"
-import { Link } from "gatsby"
+import { jsx, Image, Link } from "theme-ui"
 
 import adpub from "../images/adpub.png"
 import fbit from "../images/fbit.png"

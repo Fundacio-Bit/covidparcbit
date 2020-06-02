@@ -27,7 +27,6 @@ const Layout = ({ children, pageContext: { locale } }) => {
       }
     }
   `)
-
   return (
     <LocaleContext.Provider value={{ locale }}>
       <Header siteTitle={data.site.siteMetadata.title} />

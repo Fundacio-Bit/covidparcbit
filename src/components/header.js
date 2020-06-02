@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => {
           justifyContent: "center",
         }}
       >
-        <Link to="/" title={home}>
+        <LocalizedLink to="/" title={home}>
           <img alt="ParcBit Logo" src={logo} sx={{ width: 48, height: 48 }} />
           <span
             sx={{
@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => {
           >
             Home
           </span>
-        </Link>
+        </LocalizedLink>
       </div>
       <div
         sx={{
