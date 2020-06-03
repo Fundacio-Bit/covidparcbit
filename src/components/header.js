@@ -8,7 +8,7 @@ import useTranslations from "./useTranslations"
 import logo from "../images/logoparcbit.svg"
 
 const Header = ({ siteTitle }) => {
-  const { home, buildings, park, contact } = useTranslations()
+  const { home, buildings, park, resources, contact } = useTranslations()
   return (
     <header
       sx={{
@@ -80,6 +80,15 @@ const Header = ({ siteTitle }) => {
             }}
           >
             {buildings}
+          </LocalizedLink>
+          <LocalizedLink
+            to="/resources"
+            sx={{
+              variant: "links.navlink",
+              p: 2,
+            }}
+          >
+            {resources}
           </LocalizedLink>
           <LocalizedLink
             to="/contact"

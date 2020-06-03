@@ -36,6 +36,7 @@ const query = graphql`
             buildings
             park
             contact
+            resources
           }
         }
       }

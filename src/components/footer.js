@@ -25,7 +25,11 @@ const Footer = () => {
           mx: 4,
         }}
       >
-        <Image src={adpub} sx={{ width: 100 }} />
+        <Image
+          src={adpub}
+          sx={{ width: 100 }}
+          alt="Conselleria d'Administracions Públiques i Modernització"
+        />
       </Link>
       <Link
         href="https://www.fundaciobit.org"
@@ -35,7 +39,7 @@ const Footer = () => {
           mx: 4,
         }}
       >
-        <Image src={fbit} sx={{ width: 100 }} />
+        <Image src={fbit} sx={{ width: 100 }} alt="Fundació Bit" />
       </Link>
       <Link
         href="https://www.fundaciobit.org"
@@ -45,7 +49,7 @@ const Footer = () => {
           mx: 4,
         }}
       >
-        <Image src={apte} sx={{ width: 100 }} />
+        <Image src={apte} sx={{ width: 100 }} alt="APTE" />
       </Link>
     </footer>
   )
