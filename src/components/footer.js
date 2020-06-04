@@ -2,7 +2,8 @@
 import { jsx, Image, Link } from "theme-ui"
 
 import adpub from "../images/adpub.png"
-import fbit from "../images/fbit.png"
+import logoparcbit from "../images/logoparcbit.svg"
+import logocentrebit from "../images/logocentrebit.svg"
 import apte from "../images/apte.png"
 
 const Footer = () => {
@@ -32,17 +33,27 @@ const Footer = () => {
         />
       </Link>
       <Link
-        href="https://www.fundaciobit.org"
+        href="https://www.parcbit.es"
         sx={{
           variant: "links.navlink",
           p: 2,
           mx: 4,
         }}
       >
-        <Image src={fbit} sx={{ width: 100 }} alt="Fundació Bit" />
+        <Image src={logoparcbit} sx={{ height: 50 }} alt="Parc Bit" />
       </Link>
       <Link
-        href="https://www.fundaciobit.org"
+        href="https://www.fundaciobit.org/centrebit-menorca-cat/"
+        sx={{
+          variant: "links.navlink",
+          p: 2,
+          mx: 4,
+        }}
+      >
+        <Image src={logocentrebit} sx={{ height: 50 }} alt="Centre Bit" />
+      </Link>
+      <Link
+        href="https://www.apte.org"
         sx={{
           variant: "links.navlink",
           p: 2,
