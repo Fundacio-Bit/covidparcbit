@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import LocalizedLink from "./localizedLink"
 
@@ -8,7 +9,7 @@ const isInternal = to => /^\/(?!\/)/.test(to)
 // Only use <LocalizedLink /> for internal links
 const MdxLink = ({ href, ...props }) =>
   isHash(href) || !isInternal(href) ? (
-    <Link {...props} href={href} />
+    <Link {...props} href={href} sx={{ variant: "links.bodyLink" }} />
   ) : (
     <LocalizedLink {...props} to={href} />
   )
